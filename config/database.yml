@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 development: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   database: rails-bootstrap_development
   # For details on connection pooling, see rails configuration guide
@@ -31,7 +31,7 @@ test: &test
   database: rails-bootstrap_test
 
 production:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   url: <%= ENV['DATABASE_URL'] %>

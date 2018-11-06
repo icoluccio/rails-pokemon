@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -19,12 +17,10 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'therubyracer', platforms: :ruby
 
+gem 'sqlite3'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+
 # Use autoprefixer to avoid writing css prefixes
 gem 'autoprefixer-rails'
 
@@ -46,39 +42,19 @@ gem 'foreman'
 
 # Active Admin
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
-gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 # Enables Slim templates
 gem 'slim-rails'
 
-# Sidekiq
-gem 'sidekiq'
-gem 'sidekiq-failures'
-gem 'sidekiq_mailer'
-gem 'sinatra', require: nil
-
 # Authorization Policies
 gem 'pundit'
 
-# Exceptions Report
-gem 'rollbar'
-
-# SEO Meta Tags
-gem 'meta-tags'
-gem 'metamagic'
-
 gem 'newrelic_rpm'
 
-gem 'recipient_interceptor'
 # CORS support
 gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
 
-# Use for DoS attacks
-gem 'rack-attack'
-
 gem 'webpacker', '~> 3.0'
-
-gem 'health_check', '~> 3.0'
 
 group :development do
   # Gem to detect N+1 queries
@@ -108,8 +84,8 @@ group :development, :test do
   gem 'faker'
 
   # Lints
-  gem 'rubocop', '0.50.0'
-  gem 'rubocop-rspec', '1.10.0'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 
   gem 'scss_lint', require: false
 
