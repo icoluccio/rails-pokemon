@@ -19,16 +19,12 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 #   c.configure_rspec_metadata!
 # end
 
-# RSpec::Sidekiq.configure do |config|
-#   config.warn_when_jobs_not_processed_by_sidekiq = false
-# end
 
 RSpec.configure do |config|
   config.include ActionDispatch::TestProcess
   config.file_fixture_path = Rails.root.join('spec', 'support', 'fixtures')
 
   config.infer_spec_type_from_file_location!
-  config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Response::JSONParser, type: :controller
   config.order = 'random'
 end

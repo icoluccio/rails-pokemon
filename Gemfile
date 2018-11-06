@@ -28,12 +28,6 @@ gem 'bootstrap-sass'
 
 gem 'carrierwave'
 
-# Authentication
-gem 'devise'
-gem 'devise-async'
-# devise-i18n support
-gem 'devise-i18n'
-
 gem 'responders'
 
 gem 'active_model_serializers'
