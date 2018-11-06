@@ -3,17 +3,17 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use fontawesome for common icons
 gem 'font-awesome-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 
 gem 'therubyracer', platforms: :ruby
 
@@ -30,7 +30,7 @@ gem 'carrierwave'
 
 # Authentication
 gem 'devise'
-gem 'devise-async', '~> 0.7.0'
+gem 'devise-async'
 # devise-i18n support
 gem 'devise-i18n'
 
@@ -52,21 +52,21 @@ gem 'pundit'
 gem 'newrelic_rpm'
 
 # CORS support
-gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
 
-gem 'webpacker', '~> 3.0'
+gem 'webpacker'
 
 group :development do
   # Gem to detect N+1 queries
   gem 'better_errors'
   gem 'bullet'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen'
   gem 'meta_request'
 
 end
@@ -107,7 +107,6 @@ group :test do
   gem 'webmock'
 
   # CodeStats
-  gem 'codestats-metrics-reporter', '0.1.9', require: nil
   gem 'rubycritic', require: false
   gem 'simplecov', require: false
 
