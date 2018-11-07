@@ -31,8 +31,7 @@ class Pokemon < ApplicationRecord
   end
 
   def cambiar_estado(estado)
-    self.estado = estado
-    save!
+    update(estado: estado)
   end
 
   def recibir_danio(danio)

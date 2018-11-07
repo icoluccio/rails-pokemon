@@ -6,5 +6,6 @@ class Paralizado < Estado
   def afectar(pokemon)
     self.grado -= 1
     pokemon.cambiar_estado(nil) if grado.zero?
+    save!
   end
 end
