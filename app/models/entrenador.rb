@@ -1,5 +1,6 @@
 class Entrenador < ApplicationRecord
   has_many :pokemons, dependent: :destroy
+  has_many :batallas, dependent: :destroy
 
   validates :pokemons, length: { maximum: 6 }
 
@@ -9,7 +10,7 @@ class Entrenador < ApplicationRecord
   end
 
   def pokemon_vivos
-    pokemons.filter(&:vivo?)
+    pokemons.select(&:vivo?)
   end
 
   def proximo_pokemon

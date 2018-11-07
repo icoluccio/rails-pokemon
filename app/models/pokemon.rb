@@ -2,7 +2,7 @@ class Pokemon < ApplicationRecord
   has_many :ataques, dependent: :destroy
 
   validates :ataques, length: { maximum: 4 }
-  has_one :status, dependent: :destroy
+  has_one :estado, dependent: :destroy
 
   def agregar_ataque(ataque)
     ataques << ataque
@@ -43,5 +43,6 @@ class Pokemon < ApplicationRecord
 
   def recibir_danio(danio)
     self.vida -= [0, danio - (defensa / 10)].min
+    save!
   end
 end

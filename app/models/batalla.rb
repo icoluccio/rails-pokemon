@@ -10,7 +10,7 @@ class Batalla < ApplicationRecord
   end
 
   def termino?
-    entrenador1.no_mas_pokemon || otroEntrenador.no_mas_pokemon
+    entrenador1.no_mas_pokemon || entrenador2.no_mas_pokemon
   end
 
   def hacer_turno
