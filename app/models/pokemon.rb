@@ -27,13 +27,7 @@ class Pokemon < ApplicationRecord
     return unless vivo? && puedo_atacar?
 
     elegir_ataque.atacar(otro_pokemon)
-    afectar_por_estado
-  end
-
-  def afectar_por_estado
-    return if estado.blank?
-
-    estado.afectar
+    estado.afectar if estado.present?
   end
 
   def cambiar_estado(estado)
@@ -42,7 +36,7 @@ class Pokemon < ApplicationRecord
   end
 
   def recibir_danio(danio)
-    self.vida -= [0, danio - (defensa / 10)].min
+    self.vida -= [0, danio - (defensa / 10)].max
     save!
   end
 end
