@@ -7,4 +7,16 @@ class Entrenador < ApplicationRecord
     pokemons << pokemon
     save!
   end
+
+  def pokemon_vivos
+    pokemons.filter(&:vivo?)
+  end
+
+  def proximo_pokemon
+    pokemons.sample
+  end
+
+  def no_mas_pokemon
+    pokemon_vivos.empty?
+  end
 end
