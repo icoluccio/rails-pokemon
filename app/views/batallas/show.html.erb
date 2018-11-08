@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"> <h2> <%= @pokemon1.tipo_pokemon.nombre %> </h2> <%=image_tag("#{@pokemon1.tipo_pokemon.id}.png", size:'128x128')%> </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 progress">
+      <div class="progress-bar" role="progressbar"  style="width: <%=@pokemon1.vida/0.5%>%"  aria-valuenow="<%=@pokemon1.vida%>" aria-valuemin="0" aria-valuemax="50"></div>
+    </div>
+    <div class="col-sm-3">
+      <%=@pokemon1.vida%>/<%=@pokemon1.vida_maxima%> HP
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"><%= @pokemon1.estado&.nombre || "Saludable" %></div>
+  </div>
+
+  <div class="row">
+    <% @pokemon1.ataques.each do |ataque| %>
+    <div class="col-sm-1"> <%= button_to ataque.type, atacar_path(pokemon1: @pokemon1.id, pokemon2: @pokemon2.id, ataque: ataque.id, batalla: @batalla.id), class:'btn btn-primary' %> </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"> <h2> <%= @pokemon2.tipo_pokemon.nombre %> </h2> <%=image_tag("#{@pokemon2.tipo_pokemon.id}.png", size:'128x128')%> </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 progress">
+      <div class="progress-bar" role="progressbar"  style="width: <%=@pokemon2.vida/0.5%>%"  aria-valuenow="<%=@pokemon2.vida%>" aria-valuemin="0" aria-valuemax="50"></div>
+    </div>
+    <div class="col-sm-3">
+      <%=@pokemon2.vida%>/<%=@pokemon2.vida_maxima%> HP
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"><%= @pokemon2.estado&.nombre || "Saludable" %></div>
+  </div>
+
+  <div class="row">
+    <% @pokemon2.ataques.each do |ataque| %>
+    <div class="col-sm-1"> <%= button_to ataque.type, atacar_path(pokemon1: @pokemon2.id, pokemon2: @pokemon1.id, ataque: ataque.id, batalla: @batalla.id), class:'btn btn-primary' %> </div>
+    <% end %>
+  </div>
+</div>

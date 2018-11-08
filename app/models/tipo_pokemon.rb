@@ -1,0 +1,2 @@
+class TipoPokemon < ApplicationRecord
+end

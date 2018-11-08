@@ -15,7 +15,7 @@ gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
 
-gem 'therubyracer', platforms: :ruby
+gem 'mini_racer', platforms: :ruby
 
 gem 'sqlite3'
 # Use jquery as the JavaScript library

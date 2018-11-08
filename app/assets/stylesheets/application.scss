@@ -8,3 +8,11 @@
 
 @import 'commons';
 
+@font-face {
+  font-family: 'Pokemon';
+  src:font-url('pokemon_pixel_font.ttf');
+}
+
+td {
+  font-family: "Pokemon";
+}

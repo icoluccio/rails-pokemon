@@ -1,0 +1,38 @@
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td><%= @pokemon1.tipo_pokemon.nombre %></td>
+      <td><%=image_tag("#{@pokemon1.tipo_pokemon.id}.png", size:'128x128')%> </td>
+    </tr>
+    <tr>
+      <td>Vida: <%= @pokemon1.vida %></td>
+      <td>Estado: <%= @pokemon1.estado&.nombre || "Saludable" %></td>
+    </tr>
+
+    <tr>
+      <td> Ataques </td>
+    <% @pokemon1.ataques.each do |ataque| %>
+      <td> <%= button_to ataque.type, atacar_path(pokemon1: @pokemon1.id, pokemon2: @pokemon2.id, ataque: ataque.id, batalla: @batalla.id) %> </td>
+    <% end %>
+  </tr>
+</tbody>
+</table>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td><%= @pokemon2.tipo_pokemon.nombre %></td>
+      <td><%=image_tag("#{@pokemon2.tipo_pokemon.id}.png", size:'128x128')%> </td>
+    </tr>
+    <tr>
+      <td>Vida: <%= @pokemon2.vida %></td>
+      <td>Estado: <%= @pokemon2.estado&.nombre || "Saludable" %></td>
+    </tr>
+
+    <tr>
+      <td> Ataques </td>
+    <% @pokemon2.ataques.each do |ataque| %>
+      <td> <%= button_to ataque.type, atacar_path(pokemon1: @pokemon2.id, pokemon2: @pokemon1.id, ataque: ataque.id, batalla: @batalla.id) %> </td>
+    <% end %>
+  </tr>
+  </tbody>
+</table>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_013213) do
+ActiveRecord::Schema.define(version: 2018_11_08_024424) do
 
   create_table "ataques", force: :cascade do |t|
     t.string "type"
@@ -42,7 +42,13 @@ ActiveRecord::Schema.define(version: 2018_11_07_013213) do
     t.integer "defensa", default: 0
     t.integer "velocidad", default: 0
     t.integer "entrenador_id"
+    t.integer "tipo_pokemon_id"
     t.index ["entrenador_id"], name: "index_pokemons_on_entrenador_id"
+    t.index ["tipo_pokemon_id"], name: "index_pokemons_on_tipo_pokemon_id"
+  end
+
+  create_table "tipo_pokemons", force: :cascade do |t|
+    t.string "nombre"
   end
 
 end

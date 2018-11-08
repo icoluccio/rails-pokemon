@@ -3,6 +3,7 @@ class Pokemon < ApplicationRecord
 
   validates :ataques, length: { maximum: 4 }
   has_one :estado, dependent: :destroy
+  belongs_to :tipo_pokemon, dependent: :destroy
 
   def agregar_ataque(ataque)
     ataques << ataque
@@ -23,10 +24,10 @@ class Pokemon < ApplicationRecord
     estado.puedo_atacar?
   end
 
-  def atacar(otro_pokemon)
+  def atacar(otro_pokemon, ataque = nil)
     return unless vivo? && puedo_atacar?
-
-    elegir_ataque.atacar(otro_pokemon)
+    ataque = elegir_ataque if ataque.blank?
+    ataque.atacar(otro_pokemon)
     estado.afectar if estado.present?
   end
 
@@ -37,5 +38,9 @@ class Pokemon < ApplicationRecord
   def recibir_danio(danio)
     self.vida -= [0, danio - (defensa / 10)].max
     save!
+  end
+
+  def vida_maxima
+    50
   end
 end
