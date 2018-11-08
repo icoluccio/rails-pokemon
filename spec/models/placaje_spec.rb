@@ -6,7 +6,7 @@ describe Placaje do
   end
 
   let(:pokemon) do
-    Pokemon.create(velocidad: 5, vida: 10, ataque: ataque)
+    Pokemon.create(velocidad: 5, vida: 10, ataque: ataque, tipo_pokemon: TipoPokemon.create)
   end
   let(:ataque) do
     1

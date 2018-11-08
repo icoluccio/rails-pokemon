@@ -6,7 +6,7 @@ describe Veneno do
   end
 
   let!(:pokemon) do
-    Pokemon.create(velocidad: 5, vida: 10)
+    Pokemon.create(velocidad: 5, vida: 10, tipo_pokemon: TipoPokemon.create)
   end
 
   it 'no hace daño' do
