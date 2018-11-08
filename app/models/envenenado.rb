@@ -3,7 +3,7 @@ class Envenenado < Estado
     true
   end
 
-  def afectar(pokemon)
+  def afectar
     pokemon.recibir_danio(pokemon.vida / 10)
   end
 end

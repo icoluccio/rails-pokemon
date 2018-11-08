@@ -14,7 +14,8 @@ class Entrenador < ApplicationRecord
   end
 
   def proximo_pokemon
-    pokemons.sample
+    return pokemons.first unless pokemon_vivos.present?
+    pokemon_vivos.first
   end
 
   def no_mas_pokemon
