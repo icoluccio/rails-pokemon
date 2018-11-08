@@ -53,7 +53,6 @@ gem 'webpacker'
 group :development do
   # Gem to detect N+1 queries
   gem 'better_errors'
-  gem 'bullet'
   gem 'listen'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
