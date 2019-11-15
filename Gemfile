@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.5.3'
+ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
@@ -21,18 +21,7 @@ gem 'sqlite3'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Use autoprefixer to avoid writing css prefixes
-gem 'autoprefixer-rails'
-
-gem 'bootstrap-sass'
-
-gem 'carrierwave'
-
-gem 'responders'
-
 gem 'active_model_serializers'
-
-gem 'foreman'
 
 # Active Admin
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
@@ -40,10 +29,8 @@ gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 # Enables Slim templates
 gem 'slim-rails'
 
-# Authorization Policies
-gem 'pundit'
-
-gem 'newrelic_rpm'
+gem 'webpacker'
+gem 'bootstrap-sass'
 
 # CORS support
 gem 'rack-cors', require: 'rack/cors'
@@ -81,9 +68,6 @@ group :development, :test do
   gem 'rubocop-rspec'
 
   gem 'scss_lint', require: false
-
-  # Static analysis for security vulnerabilities
-  gem 'brakeman', require: false
 end
 
 group :test do
@@ -93,8 +77,6 @@ group :test do
   gem 'shoulda-matchers'
 
   gem 'capybara'
-  gem 'formulaic'
-  gem 'launchy'
 
   gem 'timecop'
   gem 'webmock'

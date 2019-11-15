@@ -4,4 +4,10 @@ class Ataque < ApplicationRecord
   def nombre
     self.class.to_s.upcase
   end
+
+
+
+  def danio
+    0
+  end
 end

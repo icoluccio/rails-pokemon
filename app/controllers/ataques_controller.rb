@@ -3,8 +3,8 @@ class AtaquesController < ApplicationController
     @pokemon1 = Pokemon.find(params[:pokemon1])
     @pokemon2 = Pokemon.find(params[:pokemon2])
     @ataque = Ataque.find(params[:ataque])
-    @pokemon1.atacar(@pokemon2, @ataque)
+    message = @pokemon1.atacar(@pokemon2, @ataque)
 
-    redirect_to(batallas_path(id: params[:batalla]))
+    redirect_to(batallas_path(id: params[:batalla]), flash: {notice: message})
   end
 end

@@ -29,6 +29,7 @@ class Pokemon < ApplicationRecord
     ataque = elegir_ataque if ataque.blank?
     ataque.atacar(otro_pokemon)
     estado.afectar if estado.present?
+    "#{tipo_pokemon.nombre} usó #{ataque.type} y le hizo #{ataque.danio} puntos a #{otro_pokemon.tipo_pokemon.nombre}"
   end
 
   def cambiar_estado(estado)
