@@ -1,4 +1,4 @@
-Pokemon
+## Pokemon
 
 ### 1- Installing Ruby
 
